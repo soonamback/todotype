@@ -1,4 +1,4 @@
-import Goals from "./components/goals.tsx";
+import Goals from "./components/Goals.tsx";
 
 export default function App() {
   return(
