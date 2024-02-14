@@ -1,21 +1,25 @@
-import {  type ReactNode  } from "react";
+import {  useState, type ReactNode  } from "react";
+import { Goals } from "../App";
 
 interface GoalsProps {
+    id: number;
     title: string;
-    children: ReactNode
+    children: ReactNode;
+    onDelete: (id: number) => void;
 }
-export default function Goals({
+export default function CourseGoals({
+    id,
     title,
-    children
+    children,
+    onDelete
 }: GoalsProps ){
-
     return (
     <article>
         <div>
             <h2>{ title }</h2>
             { children }
         </div>
-        <button>Delete</button>
+        <button onClick={() => onDelete(id)}>Delete</button>
     </article>
     )
 }
