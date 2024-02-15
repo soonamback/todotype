@@ -14,9 +14,11 @@ export default function NewGoal({onAddGoal}: NewGoalProps) {
         const enteredGoal = goal.current!.value
         const enteredSummary = summary.current!.value
 
+        event.currentTarget.reset();
         onAddGoal(enteredGoal,enteredSummary)
     }
-    return (<form onSubmit={handleSubmit}>
+    return (
+            <form onSubmit={handleSubmit}>
         <p>
             <label htmlFor="goal">your goal</label>
             <input type="text" id="goal" ref={goal}/>
